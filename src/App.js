@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from "./components/Layout/Header";
 import Contacts from "./components/Contacts/Contacts";
@@ -13,18 +13,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css";
 import AddContact from "./components/Contacts/AddContact";
+import EditContact from "./components/Contacts/EditContact";
 
 class App extends Component {
   render() {
     return (
       <Provider>
-        <Router>
+        <Router basename>
           <div className="App">
             <Header name="Contact Manager" />
             <div className="container">
               <Switch>
                 <Route exact path="/" component={Contacts} />
                 <Route exact path="/contact/add" component={AddContact} />
+                <Route exact path="/contact/edit/:id" component={EditContact} />
                 <Route exact path="/about" component={About} />
                 <Route component={NotFound} />
               </Switch>
