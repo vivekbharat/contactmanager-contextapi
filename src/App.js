@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <Provider>
-        <Router basename>
+        <Router>
           <div className="App">
             <Header name="Contact Manager" />
             <div className="container">
